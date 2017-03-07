@@ -79,12 +79,13 @@ $( document ).ready(function() {
             setTimeout(function() {
                 $('h2').text('Your turn!');
                 for (var i = 0; i < tacArray.length; i ++) {
-                    if (tacArray[i] === '1' || tacArray[i] === '2') {
+                    var squareNum = Math.floor(Math.random() * 9);
+                    if (tacArray[squareNum] === '1' || tacArray[squareNum] === '2') {
                         continue;
                     } else {
-                        var compSquare = $('.square-' + i);
+                        var compSquare = $('.square-' + squareNum);
                         compSquare.text('2').addClass('green').addClass('clicked');
-                        tacArray[i] = '2';
+                        tacArray[squareNum] = '2';
                         break;
                     }
                 }
@@ -94,7 +95,7 @@ $( document ).ready(function() {
                 plays++;
                 playerTurn();
 
-            }, 500); // End set Timeout
+            }, 1000); // End set Timeout
 
         } // End computer play function
 
