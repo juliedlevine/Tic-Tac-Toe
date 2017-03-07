@@ -24,52 +24,81 @@ $( document ).ready(function() {
 
         // CHECK WINNER FUNCTION
         function checkWinner() {
-
-            // Get array of values at each point of click
+            // Get array of values at each point of click or computer play
             tacArray = $('.square').map(function(){
                 return $(this).text();
             });
 
             if (tacArray[0] === player && tacArray[1] === player && tacArray[2] === player || tacArray[3] === player && tacArray[4] === player && tacArray[5] === player || tacArray[6] === player && tacArray[7] === player && tacArray[8] === player || tacArray[0] === player && tacArray[3] === player && tacArray[6] === player || tacArray[1] === player && tacArray[4] === player && tacArray[7] === player || tacArray[2] === player && tacArray[5] === player && tacArray[8] === player || tacArray[0] === player && tacArray[4] === player && tacArray[8] === player || tacArray[2] === player && tacArray[4] === player && tacArray[6] === player) {
                 gameOver = true;
+                // Player 1 win scenario
                 if (player === '1') {
-                    $('h2').html('Player 1 wins!');
+                    $('h2').html('You win!');
                     player1WinCount += 1;
                     $('#player1Wins').text(player1WinCount);
 
-                } else {
-                    $('h2').html('Player 2 wins!');
+                // Player 2 win scenario
+                } else if (player === '2') {
+                    $('h2').html('Computer wins!');
                     player2WinCount += 1;
                     $('#player2Wins').text(player2WinCount);
                 }
             } // End check winner if statement scenarios
 
-            if (plays === 9) {
-                gameOver = true;
+            // Stalemate scenario
+            if (gameOver === false && plays === 9) {
                 $('h2').html('Stalemate!');
-            } // End check stalemate
+                gameOver = true;
+            }
+
+            // Game over handler
+            if (gameOver === true) {
+                $('h2').append('<br><button>Play again?</button');
+
+                // Replay button event handler
+                $('h2').on('click', 'button', function(){
+                    $(this).remove();
+                    $('h2').html('Your turn!');
+                    $('.square').removeClass('green').removeClass('purple').removeClass('clicked').text('');
+
+                    gameOver = false;
+                    plays = 0;
+                    playerTurn();
+
+                }); // end replay button click
+
+            } // end game Over if statement
 
         } // End check winner function
 
 
         // COMPUTER PLAY FUNCTION
         function computerPlay(){
-            playerTurn();
+            $('h2').text('Computer playing...');
 
-            for (var i = 0; i < tacArray.length; i ++) {
-                if (tacArray[i] === '1' || tacArray[i] === '2') {
-                    continue;
-                } else {
-                    var compSquare = $('.square-' + i);
-                    compSquare.text('2').addClass('green').addClass('clicked');
-                    tacArray[i] = '2';
-                    checkWinner();
-                    break;
+            setTimeout(function() {
+                $('h2').text('Your turn!');
+                for (var i = 0; i < tacArray.length; i ++) {
+                    if (tacArray[i] === '1' || tacArray[i] === '2') {
+                        continue;
+                    } else {
+                        var compSquare = $('.square-' + i);
+                        compSquare.text('2').addClass('green').addClass('clicked');
+                        tacArray[i] = '2';
+                        break;
+                    }
                 }
-            }
-            plays++;
 
-        }
+                // Check winner after computer plays and change to player 1
+                checkWinner();
+                plays++;
+                playerTurn();
+
+            }, 500); // End set Timeout
+
+        } // End computer play function
+
+
 
         //MOUSEENTER EVENT HANDLER
         $(".square").on("mouseenter", function() {
@@ -106,30 +135,14 @@ $( document ).ready(function() {
                 $(this).addClass('purple').text('1');
             }
 
+            // Check winner after user clicks
             checkWinner();
-            computerPlay();
-            playerTurn();
 
-            // Change player turn text
-            $('#playerText').text(player + ' ');
-
-            // Game over handler
-            if (gameOver === true) {
-                $('h2').append('<br><button>Play again?</button');
-
-                // Replay button event handler
-                $('h2').on('click', 'button', function(){
-                    $(this).remove();
-                    $('h2').html('Player 1 make your move!');
-                    $('.square').removeClass('green').removeClass('purple').removeClass('clicked').text('');
-
-                    gameOver = false;
-                    plays = 0;
-                    playerTurn();
-
-                }); // end replay button click
-
-            } // end game Over if statement
+            // If no winner found, let computer play
+            if (gameOver === false) {
+                computerPlay();
+                playerTurn();
+            }
 
         }); // End click event handler
 

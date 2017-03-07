@@ -35,7 +35,7 @@ p {
 }
 .game-board {
 	width: 480px;
-    margin: auto;
+    margin: 0 auto;
 }
 .square {
 	height: 150px;
@@ -119,14 +119,25 @@ button:hover {
 
 /* Media queries */
 
-@media (max-width:510px) {
+@media (max-width:512px) {
+	.game-board {
+		width: 330px;
+	}
 	.square {
 		height: 125px;
 		width: 125px;
+		margin-bottom: 5px;
+		margin-right: 5px;
 	}
 }
 
 @media (max-width:430px) {
+	.icon {
+		height: 75px;
+	}
+	.game-board {
+		width: 330px;
+	}
 	.square {
 		height: 100px;
 		width: 100px;
@@ -136,7 +147,17 @@ button:hover {
 	}
 
 	h1 {
+		font-size: 30px;
 		margin-top: 15px;
 		margin-bottom: 15px;
 	}
+	h2 {
+		margin-top: 5px;
+		font-size: 18px;
+	}
+@media (max-width:320px) {
+	.game-board {
+		margin-left: 5px;
+	}
+}
 }
