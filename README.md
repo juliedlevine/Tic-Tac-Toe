@@ -16,11 +16,13 @@ Landing page - As user mouses over each square a purple X will appear in that pa
 <br>
 ![alt text](https://github.com/juliemdyer/Tic-Tac-Toe/blob/master/screenshots/landing_page.png)
 
-Computer Playing - After the user clicks a square, "Computer Playing..." text for a couple seconds before green 'O' is displayed. It is then the player's turn again.
+### Computer Playing
+After the user clicks a square, "Computer Playing..." text for a couple seconds before green 'O' is displayed. It is then the player's turn again.
 <br>
 ![alt text](https://github.com/juliemdyer/Tic-Tac-Toe/blob/master/screenshots/computer_playing.png)
 
-Computer wins / Play Again - Here the computer has won. The user can click Play Again and the game board is re-set. The win count for Computer has increased to 1 here.
+### Computer wins / Play Again
+Here the computer has won. The user can click Play Again and the game board is re-set. The win count for Computer has increased to 1 here.
 <br>
 ![alt text](https://github.com/juliemdyer/Tic-Tac-Toe/blob/master/screenshots/computer_wins.png)
 
