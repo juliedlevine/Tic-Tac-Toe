@@ -12,7 +12,9 @@ Tic Tac Toe game using jQuery. User can play against the computer (who is not ve
 * jQuery
 
 ## Game Walkthrough
-Landing page - As user mouses over each square a purple X will appear in that particular square. When they click in a square the X 'sticks' and they've made their move.
+
+## Landing Page
+As user mouses over each square a purple X will appear in that particular square. When they click in a square the X 'sticks' and they've made their move.
 <br>
 ![alt text](https://github.com/juliemdyer/Tic-Tac-Toe/blob/master/screenshots/landing_page.png)
 
