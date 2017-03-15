@@ -18,7 +18,6 @@ $( document ).ready(function() {
             tacArray = $('.square').map(function(){
                 return $(this).text();
             });
-
             // Check for winner
             if (tacArray[0] === player && tacArray[1] === player && tacArray[2] === player || tacArray[3] === player && tacArray[4] === player && tacArray[5] === player || tacArray[6] === player && tacArray[7] === player && tacArray[8] === player || tacArray[0] === player && tacArray[3] === player && tacArray[6] === player || tacArray[1] === player && tacArray[4] === player && tacArray[7] === player || tacArray[2] === player && tacArray[5] === player && tacArray[8] === player || tacArray[0] === player && tacArray[4] === player && tacArray[8] === player || tacArray[2] === player && tacArray[4] === player && tacArray[6] === player) {
                 gameOver = true;
@@ -115,8 +114,6 @@ $( document ).ready(function() {
                 $(this).addClass('purple');
             }
         }); // End mouseenter event handler
-
-
 
         //MOUSELEAVE EVENT HANDLER
         $('.square').on('mouseleave', function(){

@@ -6,10 +6,11 @@ $( document ).ready(function() {
 
     function startGame() {
 
+        // Initialize variables for start of game
         var tacArray;
+        var player;
         var gameOver = false;
         var plays = 0;
-        var player;
 
         function playerTurn() {
             if (plays % 2 === 0) {
@@ -54,6 +55,7 @@ $( document ).ready(function() {
             // Game over handler
             if (gameOver === true) {
                 $('h2').append('<br><button>Play again?</button');
+                $('.square').addClass('clicked');
 
                 // Replay button event handler
                 $('h2').on('click', 'button', function(){
@@ -78,7 +80,7 @@ $( document ).ready(function() {
 
             setTimeout(function() {
                 $('h2').text('Your turn!');
-                for (var i = 0; i < tacArray.length; i ++) {
+                for (var i = 0; i < 20; i ++) {
                     var squareNum = Math.floor(Math.random() * 9);
                     if (tacArray[squareNum] === '1' || tacArray[squareNum] === '2') {
                         continue;
@@ -91,8 +93,8 @@ $( document ).ready(function() {
                 }
 
                 // Check winner after computer plays and change to player 1
-                checkWinner();
                 plays++;
+                checkWinner();
                 playerTurn();
 
             }, 1000); // End set Timeout

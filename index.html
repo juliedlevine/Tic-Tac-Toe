@@ -8,7 +8,7 @@
     <link rel="icon" href="tic-tac-toe.png">
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <script src="app2.js"></script>
+    <script src="app4.js"></script>
 </head>
 
 
@@ -21,42 +21,42 @@
     </div>
 
     <!-- Player tracker -->
-    <h2>Player <span id="playerText"> 1 </span>it's your turn!</h2>
+    <h2>Ready to play against the computer? Make your move!</h2>
 
     <!-- Game Board -->
     <div class="game-board">
         <div class="column">
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
+            <div class="square square-0"></div>
+            <div class="square square-1"></div>
+            <div class="square square-2"></div>
         </div>
         <div class="column">
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
+            <div class="square square-3"></div>
+            <div class="square square-4"></div>
+            <div class="square square-5"></div>
         </div>
         <div class="column">
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
+            <div class="square square-6"></div>
+            <div class="square square-7"></div>
+            <div class="square square-8"></div>
         </div>
         <div class="clearfix"></div>
 
-        <div class="scoreboard">
-            <p>Scoreboard</p>
-            <table>
-                <tr>
-                    <th>Player 1</th>
-                    <th>Player 2</th>
-                </tr>
-                <tr>
-                    <td><span id="player1Wins">0</span></td>
-                    <td><span id="player2Wins">0</span></td>
-                </tr>
-            </table>
-        </div>
-
     </div> <!-- End game board -->
+
+    <div class="scoreboard">
+        <p>Scoreboard</p>
+        <table>
+            <tr>
+                <th>You</th>
+                <th>Computer</th>
+            </tr>
+            <tr>
+                <td><span id="player1Wins">0</span></td>
+                <td><span id="player2Wins">0</span></td>
+            </tr>
+        </table>
+    </div>
 
 </body>
 </html>
