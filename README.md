@@ -17,19 +17,22 @@ Tic Tac Toe game using jQuery. User can play against the computer (who is not ve
 As user mouses over each square a purple X will appear in that particular square. When they click in a square the X 'sticks' and they've made their move.
 <br>
 <p align='center'>
-<img src='https://github.com/juliemdyer/Tic-Tac-Toe/blob/master/screenshots/landing_page.png'></img></p>
+    <img src='https://github.com/juliemdyer/Tic-Tac-Toe/blob/master/screenshots/landing_page.png'></img>
+</p>
 
 ### Computer Playing
 After the user clicks a square, "Computer Playing..." text for a couple seconds before green 'O' is displayed. It is then the player's turn again.
 <br>
 <p align='center'>
-![alt text](https://github.com/juliemdyer/Tic-Tac-Toe/blob/master/screenshots/computer_playing.png)</p>
+    <img src='https://github.com/juliemdyer/Tic-Tac-Toe/blob/master/screenshots/computer_playing.png'></img>
+</p>
 
 ### Computer wins / Play Again
 Here the computer has won. The user can click Play Again and the game board is re-set. The win count for Computer has increased to 1 here.
 <br>
 <p align='center'>
-![alt text](https://github.com/juliemdyer/Tic-Tac-Toe/blob/master/screenshots/computer_wins.png) </p>
+    <img src='https://github.com/juliemdyer/Tic-Tac-Toe/blob/master/screenshots/computer_wins.png'></img>
+</p>
 
 
 ## Challenges
